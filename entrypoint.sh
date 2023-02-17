@@ -22,8 +22,8 @@ echo "$helm_output"
 
 delimiter="$(openssl rand -hex 8)"
 echo "helm_output<<${delimiter}" >> "${GITHUB_OUTPUT}"
-echo "$helm_output" >> "${GITHUB_OUTPUT}"
-echo "${delimiter}" >> "${GITHUB_OUTPUT}"
+echo "helm_output=$helm_output" >> "${GITHUB_OUTPUT}"
+echo "delimiter=${delimiter}" >> "${GITHUB_OUTPUT}"
 
 echo -e "\033[36mCleaning up: \033[0m"
 rm ./run.sh -Rf
